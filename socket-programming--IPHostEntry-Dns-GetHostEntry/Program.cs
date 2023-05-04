@@ -12,6 +12,7 @@ namespace socket_programming__IPHostEntry_Dns_GetHostEntry
         static void Main(string[] args)
         {
             IPHostEntry HE = Dns.GetHostEntry("127.0.0.1");
+            Console.WriteLine(HE.HostName);
 
         }
     }
