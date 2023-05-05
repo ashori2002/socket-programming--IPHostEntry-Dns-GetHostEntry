@@ -11,8 +11,25 @@ namespace socket_programming__IPHostEntry_Dns_GetHostEntry
     {
         static void Main(string[] args)
         {
-            IPHostEntry HE = Dns.GetHostEntry("127.0.0.1");
-            Console.WriteLine(HE.HostName);
+
+            DoGetHostEntry("sanjesh.org");
+            Console.ReadKey();
+
+        }
+
+        public static void DoGetHostEntry(string hostname)
+        {
+
+
+            IPHostEntry host = Dns.GetHostEntry(hostname);
+
+            Console.WriteLine($"GetHostEntry({hostname}) returns:");
+
+            foreach (IPAddress address in host.AddressList)
+            {
+                Console.WriteLine($"    {address}");
+            }
+
 
         }
     }
